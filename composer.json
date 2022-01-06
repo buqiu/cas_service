@@ -1,0 +1,21 @@
+{
+    "name": "buqiu/cas_service",
+    "description": "laravel cas service",
+    "type": "php",
+    "license": ">=7.4",
+    "autoload": {
+        "psr-4": {
+            "Buqiu\\CasService\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "董奎",
+            "email": "466135132@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "8.x-dev"
+    }
+}
