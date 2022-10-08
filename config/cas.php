@@ -12,7 +12,7 @@ return [
         'id'    => 'id',
         'name'  => 'users',
         //改成你的用户模型类
-        'model' => \App\Models\Users\User::class,
+        'model' => \App\Models\User::class,
     ],
     'router'            => [
         'prefix'      => 'cas',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Buqiu\Providers\Cas;
+namespace Buqiu\Cas\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -32,18 +32,22 @@ class CasProvider extends ServiceProvider
         // Migrations path.
         $migrationsPath = __DIR__.'/../../database/migrations/';
 
+        if ( ! $this->app->routesAreCached()) {
+            require __DIR__.'/../Http/routes.php';
+        }
+
         // Publish config.
         $this->publishes(
             [
                 $configPath => config_path('cas.php'),
             ],
-            'cas');
+            'buqiu-config-cas');
 
         $this->publishes(
             [
                 $migrationsPath => database_path('migrations'),
             ],
-            'migrations'
+            'buqiu-cas-migrations'
         );
     }
 }

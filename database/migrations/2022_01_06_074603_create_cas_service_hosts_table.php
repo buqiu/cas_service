@@ -16,8 +16,8 @@ class CreateCasServiceHostsTable extends Migration
         Schema::create('cas_service_hosts', function (Blueprint $table) {
             $table->id();
             $table->string('host')->unique();
-            $table->integer('service_id')->unsigned();
-            $table->foreign('service_id')->references('id')->on('cas_services');
+            $table->unsignedBigInteger('service_id')->unsigned();
+            $table->foreign('service_id')->references('id')->on('cas_services')->onDelete('cascade');
         });
     }
 

@@ -19,7 +19,7 @@ class CreateCasProxyGrantingTicketsTable extends Migration
             $table->string('pgt_url', 1024);
             $table->integer('service_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->text('proxies')->nullable();
+            $table->json('proxies')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('expire_at')->nullable();
         });

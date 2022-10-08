@@ -14,14 +14,14 @@ class CreateCasTicketsTable extends Migration
     public function up()
     {
         Schema::create('cas_tickets', function (Blueprint $table) {
-            $table->id('');
+            $table->id();
             $table->string('ticket', 256)->unique();
             $table->string('service_url', 1024);
             $table->integer('service_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('expire_at')->nullable();
-            $table->text('proxies')->nullable();
+            $table->json('proxies')->nullable();
         });
     }
 
